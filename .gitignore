@@ -1,0 +1,6 @@
+# Environment variables
+.env
+
+# Docker volumes (if ever bind-mounted locally)
+postgres-data/
+pgadmin-data/
