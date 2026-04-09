@@ -34,5 +34,6 @@ import { DeleteUserUseCase } from './application/use-cases/delete-user.use-case'
     UpdateUserUseCase,
     DeleteUserUseCase,
   ],
+  exports: [UserRepositoryPort],
 })
 export class UsersModule {}
