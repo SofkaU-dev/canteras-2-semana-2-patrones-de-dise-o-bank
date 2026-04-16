@@ -1,0 +1,18 @@
+239521e4-78b5-46a7-84d9-34494e375335
+
+e6a4e327-82ff-4da4-94f8-e49907c6877d
+
+# Transferencia sin metadata requerida (CHEQUE sin chequeNumber)
+curl -s -X POST http://localhost:3000/api/transfers \
+  -H 'Content-Type: application/json' \
+  -d '{"sourceUserId":"239521e4-78b5-46a7-84d9-34494e375335","targetUserId":"e6a4e327-82ff-4da4-94f8-e49907c6877d","amount":100000,"type":"CHEQUE"}' | jq .
+
+# ATM excediendo límite diario de $3M
+curl -s -X POST http://localhost:3000/api/transfers \
+  -H 'Content-Type: application/json' \
+  -d '{"sourceUserId":"239521e4-78b5-46a7-84d9-34494e375335","targetUserId":"e6a4e327-82ff-4da4-94f8-e49907c6877d","amount":2500000,"type":"ATM"}' | jq .
+
+# Usuario que no existe
+curl -s -X POST http://localhost:3000/api/transfers \
+  -H 'Content-Type: application/json' \
+  -d '{"sourceUserId":"239521e4-78b5-46a7-84d9-34494e375335","targetUserId":"e6a4e327-82ff-4da4-94f8-e49907c6877d","amount":1000,"type":"ONLINE"}' | jq .
