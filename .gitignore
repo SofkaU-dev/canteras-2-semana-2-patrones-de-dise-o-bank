@@ -4,3 +4,7 @@
 # Docker volumes (if ever bind-mounted locally)
 postgres-data/
 pgadmin-data/
+
+# macOS
+.DS_Store
+**/.DS_Store
